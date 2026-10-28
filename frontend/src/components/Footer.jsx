@@ -176,16 +176,15 @@ export function Footer() {
 export function FloatingActions({ toast }) {
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-40 hidden flex-col items-center gap-4 lg:flex">
+      <div className="fixed bottom-5 right-5 z-40 hidden flex-col items-center gap-2.5 lg:flex">
         <a
           href={`tel:${PHONE}`}
           id="callFloat"
           aria-label={`Call JDV Travels at ${PHONE_DISPLAY}`}
-          className="group relative grid size-14 place-items-center rounded-full bg-gradient-to-br from-saffron-500 to-amber-600 text-white shadow-2xl shadow-saffron-500/40 transition hover:scale-110"
+          className="group relative grid size-11 place-items-center rounded-full bg-navy-900 text-white shadow-lg border border-white/15 transition hover:scale-105 hover:bg-saffron-500"
         >
-          <span className="absolute inset-0 animate-ping rounded-full bg-saffron-500/40" />
-          <Icon name="phone" className="relative size-6" />
-          <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition group-hover:opacity-100">
+          <Icon name="phone" className="size-4.5" />
+          <span className="pointer-events-none absolute right-full mr-2.5 whitespace-nowrap rounded-lg bg-navy-900 px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-md transition group-hover:opacity-100">
             Call {PHONE_DISPLAY}
           </span>
         </a>
@@ -196,11 +195,10 @@ export function FloatingActions({ toast }) {
           rel="noopener"
           id="waFloat"
           aria-label="Chat with JDV Travels on WhatsApp"
-          className="group relative grid size-14 place-items-center rounded-full bg-wa text-white shadow-2xl shadow-wa/40 transition hover:scale-110"
+          className="group relative grid size-11 place-items-center rounded-full bg-wa text-white shadow-lg transition hover:scale-105 hover:bg-wa-dark"
         >
-          <span className="absolute inset-0 animate-ping rounded-full bg-wa/40" />
-          <Icon name="whatsapp" className="relative size-7" />
-          <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition group-hover:opacity-100">
+          <Icon name="whatsapp" className="size-5" />
+          <span className="pointer-events-none absolute right-full mr-2.5 whitespace-nowrap rounded-lg bg-navy-900 px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-md transition group-hover:opacity-100">
             WhatsApp {WA_DISPLAY}
           </span>
         </a>
