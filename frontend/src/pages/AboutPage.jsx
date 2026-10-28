@@ -5,7 +5,7 @@ import { OWNER_NAME, PHONE, PHONE_DISPLAY, PHONE_2, PHONE_2_DISPLAY, WA_DISPLAY,
 
 export default function AboutPage() {
   return (
-    <div className="pt-20 sm:pt-28 pb-4 sm:pb-12">
+    <div className="pt-20 sm:pt-28 pb-4 sm:pb-12 overflow-x-hidden">
       {/* Page Header */}
       <section className="relative overflow-hidden bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 py-8 sm:py-16 text-white">
         <div className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-saffron-500/10 blur-3xl" />
@@ -21,14 +21,14 @@ export default function AboutPage() {
       </section>
 
       {/* Main Story Section */}
-      <section className="py-8 sm:py-20">
+      <section className="py-6 sm:py-20">
         <div className="container-x grid items-center gap-6 sm:gap-14 lg:grid-cols-2">
-          <div className="reveal relative sm:pb-16 sm:pr-10">
+          <div className="reveal relative min-w-0 sm:pb-16 sm:pr-10">
             <img
               src="/Assets/destinations/manali.png"
               alt="Snowy Himalayan peaks and pine forest"
               loading="lazy"
-              className="h-56 sm:h-[460px] w-full rounded-2xl sm:rounded-3xl object-cover shadow-xl sm:shadow-2xl"
+              className="h-52 sm:h-[460px] w-full rounded-2xl sm:rounded-3xl object-cover shadow-xl sm:shadow-2xl"
             />
             <img
               src="/Assets/destinations/jibhi.jpg"
@@ -47,14 +47,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="reveal" style={{ '--d': '.15s' }}>
+          <div className="reveal min-w-0" style={{ '--d': '.15s' }}>
             <span className="eyebrow text-[10px] sm:text-xs">Who We Are</span>
-            <h2 className="mt-2 sm:mt-4 text-xl font-bold sm:text-4xl">Your Mountain Holiday Companion</h2>
-            <p className="mt-3 sm:mt-5 text-xs sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
-              Founded and led by <strong>{OWNER_NAME}</strong>, <strong>JDV Travels</strong> was built on the belief that mountain holidays should be relaxing from the very first planning step—without misleading photos or commercial booking markups.
+            <h2 className="mt-1.5 sm:mt-4 text-lg font-bold sm:text-4xl">Your Mountain Holiday Companion</h2>
+            <p className="mt-2 sm:mt-4 text-xs sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
+              Founded by <strong>{OWNER_NAME}</strong>, <strong>JDV Travels</strong> connects you directly with verified cottages, resorts, and houseboats across <strong>Himachal, Kashmir, Ladakh &amp; Uttarakhand</strong> at honest host prices.
             </p>
-            <p className="mt-2.5 sm:mt-4 text-xs sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
-              Our team personally coordinates with independent cottage owners, heritage houseboat caretakers, and boutique resort hosts across <strong>Jibhi, Shimla, Manali, Ladakh, Lahul &amp; Spiti, Tirthan Valley, Jalori Pass, Sojha</strong>, and throughout <strong>Jammu &amp; Kashmir</strong>.
+            <p className="hidden sm:block mt-3 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
+              We coordinate personally with property owners in Jibhi, Shimla, Manali, Spiti, Tirthan Valley, Jalori Pass, Sojha, Srinagar, and Gulmarg—so you get real room photos and zero booking markups.
             </p>
 
             {/* Owner Highlight Card */}
