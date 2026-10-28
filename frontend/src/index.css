@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --color-navy-50: #f0f4fc;
+  --color-navy-100: #dbe4f6;
+  --color-navy-200: #b9cdee;
+  --color-navy-500: #1d4f9c;
+  --color-navy-700: #0f3a7a;
+  --color-navy-800: #0d2e61;
+  --color-navy-900: #08214d;
+  --color-navy-950: #04122b;
+
+  --color-saffron-300: #ffc078;
+  --color-saffron-400: #ffa94d;
+  --color-saffron-500: #f7931e;
+  --color-saffron-600: #e07b06;
+  --color-saffron-700: #b86200;
+
+  --color-wa: #25d366;
+  --color-wa-dark: #1da851;
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 3s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+  }
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-slate-50/50 text-slate-700 font-sans antialiased dark:bg-navy-950 dark:text-slate-300 transition-colors duration-300;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-navy-900 dark:text-white tracking-tight;
+  }
+  input, select, textarea, button {
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer select-none whitespace-nowrap;
+  }
+  .btn-lg {
+    @apply px-7 py-3.5 text-base shadow-md hover:shadow-lg;
+  }
+  .btn-sm {
+    @apply px-4 py-2 text-xs font-semibold;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-saffron-500 via-saffron-500 to-saffron-600 text-white shadow-lg shadow-saffron-500/25 hover:shadow-xl hover:shadow-saffron-500/35 hover:brightness-105;
+  }
+  .btn-whatsapp {
+    @apply bg-wa text-white shadow-lg shadow-wa/25 hover:bg-wa-dark hover:shadow-wa/35;
+  }
+  .btn-outline {
+    @apply border border-slate-300 bg-white/80 text-navy-900 backdrop-blur hover:border-saffron-500 hover:bg-saffron-500/5 hover:text-saffron-600 dark:border-white/15 dark:bg-navy-900/60 dark:text-white dark:hover:border-saffron-400 dark:hover:text-saffron-400;
+  }
+  .btn-outline-light {
+    @apply border border-white/60 bg-white/10 text-white backdrop-blur hover:bg-white hover:text-navy-950 hover:border-white shadow-sm;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-saffron-500/20 bg-saffron-500/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-saffron-600 dark:border-saffron-400/20 dark:bg-saffron-400/10 dark:text-saffron-400 shadow-xs;
+  }
+
+  .field-label {
+    @apply mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400;
+  }
+  .field-input {
+    @apply block w-full max-w-full min-w-0 box-border rounded-xl sm:rounded-2xl border border-slate-200 bg-white px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-slate-800 shadow-xs outline-none transition focus:border-saffron-500 focus:bg-white focus:ring-4 focus:ring-saffron-500/15 dark:border-white/10 dark:bg-navy-900/90 dark:text-white dark:focus:border-saffron-400 dark:focus:ring-saffron-400/20;
+  }
+  .field-input.invalid {
+    @apply border-red-500 ring-4 ring-red-500/15;
+  }
+
+  .card {
+    @apply rounded-3xl bg-white shadow-xl shadow-navy-900/5 border border-slate-100 dark:bg-navy-900/80 dark:border-white/10 dark:shadow-black/30 backdrop-blur-sm box-border max-w-full;
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+    transition-delay: var(--d, 0s);
+  }
+  .reveal.in {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
