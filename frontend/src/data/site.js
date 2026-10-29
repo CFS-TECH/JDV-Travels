@@ -1,8 +1,8 @@
 export const OWNER_NAME = 'Ishwar Singh';
-export const PHONE = '+919805576370';
-export const PHONE_DISPLAY = '+91 98055 76370';
-export const PHONE_2 = '+918219232827';
-export const PHONE_2_DISPLAY = '+91 82192 32827';
+export const PHONE = '+918219232827';
+export const PHONE_DISPLAY = '+91 82192 32827';
+export const PHONE_2 = '+919805576370';
+export const PHONE_2_DISPLAY = '+91 98055 76370';
 export const WA_NUMBER = '918219232827';
 export const WA_DISPLAY = '+91 82192 32827';
 export const EMAIL = 'jdvtravels07@gmail.com';

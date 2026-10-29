@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Icon from '../components/Icon';
 import SectionHead from '../components/SectionHead';
-import { DEST_OPTIONS, PHONE, PHONE_DISPLAY, WA_DISPLAY, EMAIL, INSTAGRAM_URL, FACEBOOK_URL, WEBSITE_URL, WEBSITE_DISPLAY, waLink } from '../data/site';
+import { DEST_OPTIONS, PHONE, PHONE_DISPLAY, PHONE_2_DISPLAY, WA_DISPLAY, EMAIL, INSTAGRAM_URL, FACEBOOK_URL, WEBSITE_URL, WEBSITE_DISPLAY, waLink } from '../data/site';
 import { saveEnquiry, validPhone } from '../lib/api';
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -147,7 +147,8 @@ export default function ContactPage({ destination, setDestination, notify }) {
       icon: 'phone',
       bg: 'from-navy-700 to-navy-950',
       label: 'Direct Phone',
-      val: `${PHONE_DISPLAY} / ${WA_DISPLAY}`,
+      val: PHONE_DISPLAY,
+      subVal: PHONE_2_DISPLAY,
     },
     {
       id: 'contactEmail',
@@ -193,7 +194,10 @@ export default function ContactPage({ destination, setDestination, notify }) {
                 </span>
                 <span className="min-w-0">
                   <small className="block text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold truncate">{c.label}</small>
-                  <strong className="block truncate text-xs sm:text-sm font-bold text-navy-900 dark:text-white">{c.val}</strong>
+                  <strong className="block truncate text-xs sm:text-sm font-bold text-navy-900 dark:text-white leading-snug">{c.val}</strong>
+                  {c.subVal && (
+                    <strong className="block truncate text-xs sm:text-sm font-bold text-navy-900 dark:text-white leading-snug">{c.subVal}</strong>
+                  )}
                 </span>
               </Tag>
             );
