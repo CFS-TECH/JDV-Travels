@@ -147,8 +147,8 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Icon name="phone" className="size-3.5 sm:size-4 text-saffron-400 shrink-0 mt-0.5" />
                 <span className="flex flex-col leading-snug">
-                  <a href={`tel:${PHONE}`} className="hover:text-white">{PHONE_DISPLAY}</a>
-                  <a href={`tel:${PHONE_2}`} className="hover:text-white">{PHONE_2_DISPLAY}</a>
+                  <a href="tel:+918219232827" className="hover:text-white">+91 82192 32827</a>
+                  <a href="tel:+919805576370" className="hover:text-white">+91 98055 76370</a>
                 </span>
               </li>
               <li className="flex items-center gap-2">

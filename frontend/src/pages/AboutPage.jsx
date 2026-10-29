@@ -191,8 +191,8 @@ export default function AboutPage() {
                   <div className="min-w-0">
                     <span className="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-400">Phone Call</span>
                     <div className="flex flex-col text-[11px] sm:text-sm font-bold text-navy-900 dark:text-white leading-snug">
-                      <a href={`tel:${PHONE}`} className="hover:text-saffron-600 transition truncate">{PHONE_DISPLAY}</a>
-                      <a href={`tel:${PHONE_2}`} className="hover:text-saffron-600 transition truncate">{PHONE_2_DISPLAY}</a>
+                      <a href="tel:+918219232827" className="hover:text-saffron-600 transition truncate">+91 82192 32827</a>
+                      <a href="tel:+919805576370" className="hover:text-saffron-600 transition truncate">+91 98055 76370</a>
                     </div>
                   </div>
                 </div>
